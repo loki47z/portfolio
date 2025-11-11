@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// @ts-expect-error: side-effect import of CSS without type declarations
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
