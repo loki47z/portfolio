@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Thom's Portfolio",
-  description: "Star Wars Themed",
+  description: "I am Thom",
 };
 
 export default function RootLayout({
