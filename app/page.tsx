@@ -1,15 +1,22 @@
 import Image from "next/image"
-
 export default function Home(){
   return(
-    <section className="section">
-      <div>
-        <div>Hello, There <br /> I am Thomas Manong&apos;a</div>
-        <div>I&apos;m a passionate IT student and web developer who loves turning creative ideas into interactive digital experiences. I enjoy working with technologies like JavaScript, React, Node.js, and MongoDB, and I&apos;m always exploring ways to build projects that blend functionality, creativity, and design. <br /> When I&apos;m not coding, you&apos;ll probably find me watching anime, playing games, or experimenting with new tech concepts. I&apos;m currently focused on developing projects that showcase both my technical problem-solving and design sense — from dynamic web apps to themed portfolio sites inspired by my favorite worlds like Naruto. <br /> I&apos;m driven by curiosity, continuous learning, and the challenge of bringing imaginative ideas to life through code.</div>
-      </div>
-      <div>
-        <Image src='/img.jpg' width={290} height={520} alt='profile'></Image>
-      </div>
+      <section id="hero" className="text-center py-20 bg-linear-to-r from-blue-50 to-indigo-100 rounded-xl shadow-2xl mb-16 px-6">
+            <div className="flex justify-center mb-6">
+                <Image src="" 
+                     alt="Thomas Manong'a Profile Photo Placeholder"
+                     className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-xl" 
+                     width={100} height={100}/>
+            </div>
+            <h1 className="text-5xl font-extrabold text-gray-900 mb-3">Thomas J. Manong&apos;a</h1>
+            <p className="text-xl text-blue-600 font-semibold mb-6">Information Technology Student | Software Engineer</p>
+            <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+            Hello, There I am Thomas Manong&apos;a I&apos;m a passionate IT student and web developer who loves turning creative ideas into interactive digital experiences. I enjoy working with technologies like JavaScript, React, Node.js, and MongoDB, and I&apos;m always exploring ways to build projects that blend functionality, creativity, and design. When I&apos;m not coding, you&apos;ll probably find me watching anime, playing games, or experimenting with new tech concepts. I&apos;m currently focused on developing projects that showcase both my technical problem-solving and design sense — from dynamic web apps to themed portfolio sites inspired by my favorite worlds like Naruto. <br /> I&apos;m driven by curiosity, continuous learning, and the challenge of bringing imaginative ideas to life through code.
+            </p>
+            <div className="mt-8">
+                <a href="#contact" className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg">Get in Touch</a>
+                <a href="https://github.com/loki47z" target="_blank" className="inline-block ml-4 bg-gray-800 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300 shadow-lg">View GitHub</a>
+            </div>
     </section>
   )
 }
