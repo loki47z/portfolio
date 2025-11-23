@@ -10,8 +10,9 @@ export default function Navbar(){
         {name: "About", href: '/about'},
         {name: "Academics", href: '/academics'},
         {name: "Contact", href: '/contact'},
+        {name: 'Hobbies', href: '/hobbies'},
         {name: "Project", href: '/projects'},
-        {name: 'Skills', href: '/skills'}
+        {name: 'Skills', href: '/skills'},
     ]
     
     return(

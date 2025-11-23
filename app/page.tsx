@@ -15,7 +15,7 @@ export default function Home(){
             Hello, There I am Thomas Manong&apos;a I&apos;m an IT student who enjoys and is considering majoring in software engineering and Cybersecurity. I enjoy working with technologies like JavaScript, React, Node.js, and MongoDB, and I&apos;m always exploring ways to build projects that blend functionality, creativity, and design. When I&apos;m not coding, you&apos;ll probably find me watching anime, playing games especially Call of Duty Mobile and Minecraft, or experimenting with new tech concepts. I&apos;m currently focused on developing projects that showcase both my technical problem-solving and design sense such as dynamic web apps with functional backends. <br /> I&apos;m driven by curiosity, ego, continuous learning, and the challenge of bringing imaginative ideas to life through code.
             </p>
             <div className="mt-8">
-                <a href="#contact" className="inline-block md:block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg my-4">Get in Touch</a>
+                <a href="/contact" className="inline-block md:block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition duration-300 shadow-lg my-4">Get in Touch</a>
                 <a href="https://github.com/loki47z" target="_blank" className="inline-block md:block mt-4 bg-gray-800 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-900 transition duration-300 shadow-lg">View GitHub</a>
             </div>
     </section>

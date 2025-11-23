@@ -15,7 +15,15 @@ export default function SkillsPage(){
 
     const softSkills = [
         {name: "Teamwork", color: "green"},
-        
+        {name: "Technical communication"
+, color: "green"},
+        {name: "Problem-solving", color: "green"},
+        {name: "Time management", color: "green"},
+        {name: "Adaptability", color: "green"},
+        {name: "Attention to detail", color: "green"},
+        {name: "Analytical thinking", color: "green"},
+        {name: "Troubleshooting mindset", color: "green"},
+        {name: "Documentation clarity", color: "green"}
     ]
     return(
         <section id="skills" className="py-12">

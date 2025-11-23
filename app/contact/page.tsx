@@ -22,24 +22,6 @@ export default function ContactPage(){
                         </li>
                     </ul>
                 </div>
-
-                
-                <div className="bg-gray-100 p-6 rounded-xl shadow-inner border-t-4 border-gray-500">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">Referral Contact</h3>
-                    <p className="text-gray-700 font-medium">Mr B. Kaunda</p>
-                    <p className="text-gray-600 mb-3">CEO of Kunda Suppliers</p>
-                    <ul className="space-y-2 text-gray-700 text-sm">
-                        <li className="flex items-center">
-                            <span className="font-semibold w-24">Phone:</span>
-                            +265 991 226 114, +265 884 086 208
-                        </li>
-                        <li className="flex items-center">
-                            <span className="font-semibold w-24">Email:</span>
-                            kundasuppliers1@gmail.com
-                        </li>
-                    </ul>
-                    <p className="text-xs text-red-500 mt-4">*Please note: Contact for professional verification only.</p>
-                </div>
             </div>
         </section>
     )
