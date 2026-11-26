@@ -1,0 +1,108 @@
+{
+  "eyebrow": "BACKGROUND",
+  "title": "Academic Journey",
+  "description": "Formal computer science, software development, hardware, and networking foundations built across university and secondary education.",
+  "education": [
+    {
+      "id": "mubas-bsc-it",
+      "degree": "Bachelor of Science in Information Technology",
+      "institution": "Malawi University of Business and Applied Science",
+      "shortInstitution": "MUBAS",
+      "period": "Jan 2024 – Present",
+      "status": "Studying",
+      "isPrimary": true,
+      "modulesHeading": "Academic Modules by Semester",
+      "moduleGroups": [
+        {
+          "code": "YEAR 1 · SEM 1",
+          "title": "First Year, First Semester",
+          "status": "Completed",
+          "modules": [
+            "Information and Communication Technology",
+            "Fundamentals in Computer Networking",
+            "Introduction to Programming (Language: C++)",
+            "English for Academic Purposes",
+            "Electric Circuit Fundamentals",
+            "College Algebra and Trigonometry"
+          ]
+        },
+        {
+          "code": "YEAR 1 · SEM 2",
+          "title": "First Year, Second Semester",
+          "status": "Completed",
+          "modules": [
+            "Computer Hardware Systems I",
+            "Programming II (Language: C++)",
+            "Switching and Routing",
+            "Calculus I",
+            "English for Academic Purposes",
+            "Analog Electronics I"
+          ]
+        },
+        {
+          "code": "YEAR 2 · SEM 1",
+          "title": "Second Year, First Semester",
+          "status": "Completed",
+          "modules": [
+            "Computer Hardware Systems II (Arduino Uno)",
+            "Web Programming (Languages: HTML, CSS, JavaScript, Node.js)",
+            "Interconnecting Networks",
+            "Numerical Analysis",
+            "Business Communication Skills",
+            "Analog Electronics II"
+          ]
+        },
+        {
+          "code": "YEAR 2 · SEM 2",
+          "title": "Second Year, Second Semester",
+          "status": "Current",
+          "modules": [
+            "Applied Statistic",
+            "Data Structures and Algorithms",
+            "Database Management Systems (MySQL)",
+            "Digital Electronics – Combinational Logic",
+            "Geographic Information Systems",
+            "Systems Analysis and Design"
+          ]
+        },
+        {
+          "code": "YEAR 3 · SEM 1",
+          "title": "Third Year, First Semester",
+          "status": "Completed",
+          "modules": [
+            "Operating Systems I",
+            "Python Programming",
+            "Computer Hardware III",
+            "Computer Graphics",
+            "Database Administration",
+            "Research Methods"
+          ]
+        },
+        {
+          "code": "YEAR 3 · SEM 2",
+          "title": "Third Year, Second Semester",
+          "status": "Completed",
+          "modules": [
+            "Operating Systems II",
+            "Computer Systems Security",
+            "Telecommunications I",
+            "Mobile Solutions Development",
+            "Server Administration",
+            "Microprocessor Interfacing and Programming"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loyola-msce",
+      "degree": "Malawi School Certificate of Education (MSCE)",
+      "institution": "Loyola Jesuit Secondary School",
+      "shortInstitution": "Loyola Jesuit",
+      "period": "Sep 2018 – Sep 2022",
+      "status": "Completed",
+      "isPrimary": false,
+      "modulesHeading": null,
+      "moduleGroups": []
+    }
+  ]
+}

@@ -1,41 +1,109 @@
-export default function Academics(){
-    return(
-        <section id="education" className="py-12">
-            <h2 className="text-4xl font-bold text-gray-800 section-header">Academic Journey</h2>
+import academicsData from "@/data/academics.json";
 
-            <div className="bg-white p-8 rounded-xl shadow-xl mb-8 border-t-4 border-blue-500">
-                <h3 className="text-2xl font-bold text-blue-600">Bachelor of Science in Information Technology</h3>
-                <p className="text-lg font-semibold text-gray-700">Malawi University of Business and Applied Science</p>
-                <p className="text-sm text-gray-500 mb-4">January 2024 - Present (Studying)</p>
+export default function AcademicsPage() {
+  return (
+    <section
+      id="education"
+      className="max-w-[1200px] mx-auto px-gutter-lg md:px-page-margin py-section flex flex-col gap-gutter-xl"
+    >
+      <div className="flex flex-col gap-gutter-xs">
+        <span className="font-label text-label-md text-light-primary">
+          {academicsData.eyebrow}
+        </span>
+        <h1 className="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface">
+          {academicsData.title}
+        </h1>
+        <p className="font-body text-body-lg text-light-on-surface-variant max-w-2xl">
+          {academicsData.description}
+        </p>
+      </div>
 
-                <h4 className="text-xl font-semibold text-gray-800 mb-3">Key Modules</h4>
-                <div className="grid md:grid-cols-3 gap-4 text-sm">
-                    <ul className="space-y-2 p-3 bg-blue-50 rounded-lg">
-                        <li className="font-medium text-blue-700">Year 1 Highlights:</li>
-                        <li><span className="text-gray-600">Fundamentals in Computer Networking</span></li>
-                        <li><span className="text-gray-600">Introduction to Programming (C++)</span></li>
-                        <li><span className="text-gray-600">Electric Circuit Fundamentals</span></li>
-                    </ul>
-                    <ul className="space-y-2 p-3 bg-blue-50 rounded-lg">
-                        <li className="font-medium text-blue-700">Year 2 Highlights (Completed):</li>
-                        <li><span className="text-gray-600">Web Programming (HTML, CSS, JS, Node.js)</span></li>
-                        <li><span className="text-gray-600">Computer Hardware Systems II (Arduino Uno)</span></li>
-                        <li><span className="text-gray-600">Interconnecting Networks</span></li>
-                    </ul>
-                    <ul className="space-y-2 p-3 bg-blue-50 rounded-lg">
-                        <li className="font-medium text-blue-700">Current Studies:</li>
-                        <li><span className="text-gray-600">Data Structures and Algorithms</span></li>
-                        <li><span className="text-gray-600">Database Management Systems (MySQL)</span></li>
-                        <li><span className="text-gray-600">Systems Analysis and Design</span></li>
-                    </ul>
+      <div className="flex flex-col gap-gutter-lg">
+        {academicsData.education.map((entry) => (
+          <article
+            key={entry.id}
+            className="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex flex-col gap-gutter-lg"
+          >
+            <header className="flex flex-col sm:flex-row sm:items-start justify-between gap-gutter-md">
+              <div className="flex flex-col gap-gutter-xs">
+                <div className="inline-flex items-center gap-gutter-sm">
+                  <span
+                    className="material-symbols-outlined text-light-primary text-[20px]"
+                    aria-hidden="true"
+                  >
+                    school
+                  </span>
+                  <span className="font-label text-label-sm text-light-primary uppercase">
+                    {entry.status}
+                  </span>
                 </div>
-            </div>
+                <h2 className="font-title text-title-lg text-light-on-surface">
+                  {entry.degree}
+                </h2>
+                <p className="font-body text-body-md text-light-on-surface-variant">
+                  {entry.institution}
+                </p>
+              </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md">
-                <h3 className="text-xl font-bold text-gray-800">The Malawi School Certificate of Education (MSCE)</h3>
-                <p className="text-lg font-semibold text-gray-700">Loyola Jesuit Secondary School</p>
-                <p className="text-sm text-gray-500">September 2018 - September 2022</p>
-            </div>
-        </section>
-    )
+              <span className="font-label text-label-sm text-light-primary bg-light-surface-container-low px-3 py-1.5 rounded-full border border-light-outline-variant tabular-nums shrink-0 self-start">
+                {entry.period}
+              </span>
+            </header>
+
+            {entry.moduleGroups.length > 0 && (
+              <div className="pt-gutter-md border-t border-light-surface-container flex flex-col gap-gutter-md">
+                {entry.modulesHeading && (
+                  <h3 className="font-title text-title-md text-light-on-surface">
+                    {entry.modulesHeading}
+                  </h3>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter-md">
+                  {entry.moduleGroups.map((group) => (
+                    <div
+                      key={group.code}
+                      className="bg-light-surface-container-low border border-light-surface-container rounded p-gutter-md flex flex-col gap-gutter-sm"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-gutter-sm">
+                        <div className="flex flex-col gap-gutter-xs">
+                          <span className="font-label text-label-sm text-light-primary">
+                            {group.code}
+                          </span>
+                          <span className="font-title text-title-md text-light-on-surface">
+                            {group.title}
+                          </span>
+                        </div>
+                        {group.status && (
+                          <span className="font-label text-label-sm text-light-on-surface-variant bg-light-surface-container-lowest px-2.5 py-1 rounded-full border border-light-outline-variant">
+                            {group.status}
+                          </span>
+                        )}
+                      </div>
+
+                      <ul className="flex flex-col gap-gutter-xs pt-gutter-xs border-t border-light-outline-variant/60">
+                        {group.modules.map((mod) => (
+                          <li
+                            key={mod}
+                            className="flex items-start gap-gutter-sm font-body text-body-md text-light-on-surface-variant"
+                          >
+                            <span
+                              className="material-symbols-outlined text-light-primary text-[16px] mt-1 shrink-0"
+                              aria-hidden="true"
+                            >
+                              check_circle
+                            </span>
+                            <span>{mod}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }

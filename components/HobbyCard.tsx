@@ -1,23 +1,38 @@
 import Image from "next/image";
-interface HobbyCardProps{
-    title: string;
-    description: string;
-    image: string;
-    themeClass: string;
+
+interface HobbyCardProps {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
 }
 
-export default function HobbyCard({title, description, image, themeClass}: HobbyCardProps){
-    return(
-        <div className={`p-6 rounded-xl shadow-lg flex flex-col items-center justify-center text-center ${themeClass}`}>
-            <div className="text-3xl mb-4">
-                <Image src={image} alt={`${title} Icon`} width={200} height={200} className="mx-auto"/>
-            </div>
-            <h3 className="text-2xl font-bold mb-3 border-b-2 pb-2">
-                {title}
-            </h3>
-            <p className="text-lg">
-                {description}
-            </p>
-        </div>
-    )
+export default function HobbyCard({
+  title,
+  category,
+  description,
+  image,
+}: HobbyCardProps) {
+  return (
+    <article className="h-full bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex flex-col gap-gutter-md hover:border-light-primary transition-colors duration-state-change ease-state-change">
+      <div className="w-full h-40 rounded bg-light-surface-container-low border border-light-surface-container flex items-center justify-center p-gutter-md">
+        <Image
+          src={image}
+          alt={`${title} icon`}
+          width={140}
+          height={140}
+          className="max-h-28 w-auto object-contain"
+        />
+      </div>
+
+      <header className="flex flex-col gap-gutter-xs">
+        <span className="font-label text-label-sm text-light-primary">{category}</span>
+        <h2 className="font-title text-title-lg text-light-on-surface">{title}</h2>
+      </header>
+
+      <p className="font-body text-body-md text-light-on-surface-variant text-pretty">
+        {description}
+      </p>
+    </article>
+  );
 }

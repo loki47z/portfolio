@@ -1,28 +1,112 @@
-export default function ContactPage(){
-    return(
-        <section id="contact" className="py-12">
-            <h2 className="text-4xl font-bold text-gray-800 section-header">Contact & Referrals</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-                
-                <div className="bg-white p-6 rounded-xl shadow-xl border-t-4 border-indigo-500">
-                    <h3 className="text-2xl font-semibold text-gray-800 mb-4">Let&apos;s Connect</h3>
-                    <ul className="space-y-3 text-gray-700">
-                        <li className="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"/></svg>
-                            <a href="mailto:thomasmanonga7@gmail.com" className="hover:underline">thomasmanonga7@gmail.com</a>
-                        </li>
-                        <li className="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                            <a href="tel:+265986545056" className="hover:underline">+265 986 545 056</a>
-                        </li>
-                        <li className="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            <span>Lilongwe, Malawi</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    )
+const contactChannels = [
+  {
+    label: "EMAIL",
+    value: "thomasmanonga7@gmail.com",
+    href: "mailto:thomasmanonga7@gmail.com",
+    icon: "mail",
+    external: false,
+  },
+  {
+    label: "PHONE",
+    value: "+265 986 545 056",
+    href: "tel:+265986545056",
+    icon: "call",
+    external: false,
+  },
+  {
+    label: "GITHUB",
+    value: "github.com/loki47z",
+    href: "https://github.com/loki47z",
+    icon: "code",
+    external: true,
+  },
+  {
+    label: "LINKEDIN",
+    value: "linkedin.com/in/thomas-manong-a-60a577301",
+    href: "https://www.linkedin.com/in/thomas-manong-a-60a577301",
+    icon: "badge",
+    external: true,
+  },
+  {
+    label: "INSTAGRAM",
+    value: "@thom_the_shadow_clone",
+    href: "https://www.instagram.com/thom_the_shadow_clone/",
+    icon: "photo_camera",
+    external: true,
+  },
+  {
+    label: "LOCATION",
+    value: "Lilongwe, Malawi",
+    href: null,
+    icon: "location_on",
+    external: false,
+  },
+];
+
+export default function ContactPage() {
+  return (
+    <section
+      id="contact"
+      className="max-w-[1200px] mx-auto px-gutter-lg md:px-page-margin py-section flex flex-col gap-gutter-xl"
+    >
+      <div className="flex flex-col gap-gutter-xs">
+        <span className="font-label text-label-md text-light-primary">CONTACT &amp; REFERRALS</span>
+        <h1 className="font-headline text-headline-lg-mobile md:text-headline-lg text-light-on-surface">
+          Let&apos;s Connect
+        </h1>
+        <p className="font-body text-body-lg text-light-on-surface-variant max-w-2xl">
+          Open to software engineering internships, collaborative web projects, and IT
+          opportunities in Lilongwe or remote.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter-lg">
+        {contactChannels.map((channel) => {
+          const inner = (
+            <>
+              <span
+                className="w-11 h-11 rounded bg-light-surface-container-low border border-light-outline-variant flex items-center justify-center shrink-0"
+                aria-hidden="true"
+              >
+                <span className="material-symbols-outlined text-light-primary text-[22px]">
+                  {channel.icon}
+                </span>
+              </span>
+              <div className="flex flex-col gap-gutter-xs min-w-0">
+                <span className="font-label text-label-sm text-light-on-surface-variant">
+                  {channel.label}
+                </span>
+                <span className="font-title text-title-md text-light-on-surface truncate">
+                  {channel.value}
+                </span>
+              </div>
+            </>
+          );
+
+          if (!channel.href) {
+            return (
+              <div
+                key={channel.label}
+                className="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex items-center gap-gutter-md"
+              >
+                {inner}
+              </div>
+            );
+          }
+
+          return (
+            <a
+              key={channel.label}
+              href={channel.href}
+              target={channel.external ? "_blank" : undefined}
+              rel={channel.external ? "noopener noreferrer" : undefined}
+              className="bg-light-surface-container-lowest border border-light-outline-variant rounded-lg p-gutter-lg flex items-center gap-gutter-md hover:border-light-primary transition-colors duration-state-change ease-state-change"
+            >
+              {inner}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  );
 }
